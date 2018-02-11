@@ -81,6 +81,7 @@ class OLED_Display: public Adafruit_SSD1306
     void addSent ( void );
     void addError ( void );
     void addComplete ( void );
+    float getBatteryVoltage ( void );
 };
  
 

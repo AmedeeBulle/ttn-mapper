@@ -27,7 +27,11 @@ Aside the Adafruit SAMD support you will need the following libraries:
 
 ## Running the script
 Copy `ttn_secrets_template.h` to `ttn_secrets.h` and set your Application Key and App EUI.  
-You also need to define a unique Device EUI -- as the Adafruit Feather does not have a serial number, just pick a random EUI...
+You also need to define a unique Device EUI -- as the Adafruit Feather does not have a serial number, just pick a random EUI.
+
+By default, the node sends a message with `*` as payload every minute.
+- You can change the `send_packet_interval` in `ttn_mapper.cpp` (Respect duty cycle!)
+- To send battery voltage as Cayenne LPP instead of `*`, uncomment `#define CAYENNE_LPP` in `ttn_mapper.cpp`
 
 Compile, upload and you should be good to go!
 

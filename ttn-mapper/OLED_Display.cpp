@@ -122,3 +122,9 @@ void OLED_Display::update ( void )
   display();
 }
 
+// Returns last voltage
+float OLED_Display::getBatteryVoltage ( void )
+{
+  return _battery;
+}
+

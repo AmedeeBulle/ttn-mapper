@@ -15,6 +15,9 @@
 #include "OLED_Display.h"
 #include "ttn_secrets.h"
 
+// Uncomment the following line to send Battery Voltage instead of '*' as payload
+// #define CAYENNE_LPP
+
 // Display handler
 extern OLED_Display display;
 
@@ -69,7 +72,13 @@ void init_lora (osjob_t* j)
 static osjob_t send_packet_job;
 static void send_packet(osjob_t* j)
 {
-  static uint8_t message[] = "*";
+  #ifdef CAYENNE_LPP
+    // Voltage IPSO is 3316, but payload size is not defined, so we use Analog Input
+    static uint8_t message[] = { 1, 2, 0, 0, 0 };
+    uint16_t voltage = 0;
+  #else
+    static uint8_t message[] = "*";
+  #endif
   
   display.clearText();
   display.print(display.hms(os_getTime()));
@@ -81,6 +90,11 @@ static void send_packet(osjob_t* j)
     display.addError();
   } else {
     // Prepare upstream data transmission at the next possible time.
+    #ifdef CAYENNE_LPP
+      voltage = display.getBatteryVoltage() * 100;
+      message[2] = voltage >> 8;
+      message[3] = voltage;
+    #endif
     LMIC_setTxData2(1, message, sizeof(message)-1, 0);
     display.println(": Sending msg");
     display.addSent();
