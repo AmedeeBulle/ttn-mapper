@@ -63,6 +63,9 @@ void init_lora (osjob_t* j)
 {
   // Reset the MAC state. Session and pending data transfers will be discarded.
   LMIC_reset();
+  // Allow 1% error margin on clock
+  // Note: this might not be necessary, never had clock problem...
+  LMIC_setClockError(MAX_CLOCK_ERROR * 1 / 100);
   // start joining
   LMIC_startJoining();
 }
