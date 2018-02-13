@@ -16,7 +16,7 @@
 #include "ttn_secrets.h"
 
 // Uncomment the following line to send Battery Voltage instead of '*' as payload
-// #define CAYENNE_LPP
+#define CAYENNE_LPP
 
 // Display handler
 extern OLED_Display display;
@@ -48,13 +48,13 @@ void os_getDevKey (u1_t* buf)
 // Pin mapping
 // The Feather M0 LoRa does not map RFM95 DIO1 to an M0 port. LMIC needs this signal 
 // in LoRa mode, so you need to bridge IO1 to an available port -- I have bridged it to 
-// Digital pin #10
+// Digital pin #11
 // We do not need DIO2 for LoRa communication.
 const lmic_pinmap lmic_pins = {
     .nss = 8,
     .rxtx = LMIC_UNUSED_PIN,
     .rst = 4,
-    .dio = {3, 10, LMIC_UNUSED_PIN},
+    .dio = {3, 11, LMIC_UNUSED_PIN},
 };
 
 // Init job -- Actual message message loop will be initiated when join completes

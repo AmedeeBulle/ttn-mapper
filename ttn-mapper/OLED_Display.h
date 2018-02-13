@@ -48,8 +48,8 @@ const uint8_t oled_char_h = 8;
 
 // Battery voltage pin
 // Warning: Analog A7 is also Digital #9 which is "Button A" on the OLED FeatherWing.
-// If you plan to use this button, do not connect "A" to #9 (cut the pin) and solder 
-// a bridge from "A" to an unused pin pin on teh FeatherWing.
+// If you plan to use this button, do not connect "A" to #9 and solder a bridge from
+// "A" to an unused pin (e.g. #10) on the FeatherWing.
 const uint8_t battery_pin = A7;
 
 // Class definition

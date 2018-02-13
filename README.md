@@ -14,7 +14,7 @@ See https://ttnmapper.org/ for more information about the TTN Mapper project.
 - Optional:  SMT uFL connector, pigtail and antenna
 - Battery. Either a small 4.2/3.7V LiPo battery or a 5V source through the MicroUSB connector
 
-To expose the RFM95 DIO1 to the M0, solder a bridge from the _IO1_ to _Digital #10_ (or any other free port).  
+To expose the RFM95 DIO1 to the M0, solder a bridge from the _IO1_ to _Digital #11_ (or any other free port).  
 The easiest is to solder this bridge on the FeatherWing.
 
 ## Software requirements
