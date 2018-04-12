@@ -57,7 +57,7 @@ class OLED_Display: public Adafruit_SSD1306
 {
   protected:
     float _battery;
-    void _readBatteryVotlatge( void );
+    void _readBatteryVoltage( void );
     s4_t _uptime( void );
     uint32_t _sent;
     uint32_t _error;

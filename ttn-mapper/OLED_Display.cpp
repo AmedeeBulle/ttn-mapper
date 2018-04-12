@@ -9,7 +9,7 @@
 #include "OLED_Display.h"
 
 // Reads battery voltage
-void OLED_Display::_readBatteryVotlatge( void )
+void OLED_Display::_readBatteryVoltage( void )
 {
   _battery = analogRead(battery_pin);
   _battery *= 2;    // we divided by 2, so multiply back
@@ -116,7 +116,7 @@ void OLED_Display::update ( void )
 
   setCursor(oled_w - (oled_char_w * 8), oled_char_h * 3);
   print ("Bt ");
-  _readBatteryVotlatge();
+  _readBatteryVoltage();
   print (_battery,2);
   print("V");
   display();
