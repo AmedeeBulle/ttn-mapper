@@ -149,8 +149,8 @@ static void send_packet(osjob_t* j)
 
   // Reschedule
   os_setTimedCallback(&send_packet_job,
-		      os_getTime()+sec2osticks(interval),
-		      send_packet);
+                      os_getTime()+sec2osticks(interval),
+                      send_packet);
 }
 
 // LoRa event handler
@@ -202,10 +202,10 @@ void onEvent (ev_t ev) {
               display.println(" - Received ack");
             }
             // We could re-schedule from here, but it would break the loop if a
-	    // TX never completes...
+            // TX never completes...
             // os_setTimedCallback(&send_packet_job,
-	    //                     os_getTime()+sec2osticks(send_packet_interval),
-	    //                     send_packet);
+            //                     os_getTime()+sec2osticks(send_packet_interval),
+            //                     send_packet);
             break;
         case EV_LOST_TSYNC:
             display.println("Lost Sync");
