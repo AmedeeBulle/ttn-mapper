@@ -17,8 +17,21 @@ Adafruit_GPS GPS(&GPSSerial);
 // Timer for reading GPS data
 Adafruit_ZeroTimer timer = Adafruit_ZeroTimer(timer_number);
 
+//define the interrupt handlers
+void TC3_Handler(){
+  Adafruit_ZeroTimer::timerHandler(3);
+}
+
+void TC4_Handler(){
+  Adafruit_ZeroTimer::timerHandler(4);
+}
+
+void TC5_Handler(){
+  Adafruit_ZeroTimer::timerHandler(5);
+}
+
 // Timer interrupt handler
-void timer_callback(struct tc_module *const module_inst)
+void timer_callback()
 {
   GPS.read();
 }

@@ -20,8 +20,8 @@ The easiest is to solder this bridge on the FeatherWing.
 ## Software requirements
 Aside the Adafruit SAMD support you will need the following libraries:
 - For the OLED FeatherWing:
-    - [Adafruit_SSD1306][3]
-    - [Adafruit-GFX-Library][4]
+    - [Adafruit_SSD1306][3](1.1.2)
+    - [Adafruit-GFX-Library][4] (1.2.5)
 - For LoRaWan:
     - [Arduino LMIC][5]
 
@@ -43,8 +43,8 @@ You will need:
 - GPS antenna and pigtail
 
 And the following libraries:
-- [Adafruit_GPS][7]
-- [Adafruit_ZeroTimer][8]
+- [Adafruit_GPS][7] (1.0.3)
+- [Adafruit_ZeroTimer][8] (2.0.0)
 - [Adafruit_ASFcore][9]
 
 Add the _TTN Mapper_ integration to your application in the _TTN Console_ and configure the Payload decoder with:
