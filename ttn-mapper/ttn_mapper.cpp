@@ -22,7 +22,7 @@
 extern OLED_Display display;
 
 // Send packet interval (in seconds) -- respect duty cycle!
-const uint8_t send_packet_interval = 60;
+const uint16_t send_packet_interval = 60;
 
 // LoRaWan keys
 static const u1_t app_eui[8]  = SECRET_APP_EUI;

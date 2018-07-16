@@ -28,7 +28,7 @@ const u1_t port = 2;
 extern OLED_Display display;
 
 // Send packet interval (in seconds) -- respect duty cycle!
-const uint8_t send_packet_interval = 60;
+const uint16_t send_packet_interval = 60;
 
 // Waiting on fix interval
 const uint8_t wait_fix_interval = 5;
@@ -93,7 +93,7 @@ static void send_packet(osjob_t* j)
   static uint8_t payload[32];
   uint8_t idx = 0;
   uint32_t data;
-  uint8_t interval = send_packet_interval;
+  uint16_t interval = send_packet_interval;
   #ifdef ADD_PAYLOAD
     uint16_t voltage = 0;
   #endif
